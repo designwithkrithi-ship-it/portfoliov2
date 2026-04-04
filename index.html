@@ -704,6 +704,126 @@
       color: rgba(245,240,224,0.25);
       text-align: center; line-height: 18px;
     }
+<<<<<<< HEAD
+=======
+
+    /* ─── RESPONSIVE ─── */
+
+    /* Tablet (≤1024px) */
+    @media (max-width: 1024px) {
+      nav { padding: 0 32px; }
+      .nav-links { gap: 24px; }
+
+      #hero { padding: 80px 32px 0; }
+      .hero-portfolio-bg { font-size: 220px; line-height: 220px; }
+      .hero-h1 { font-size: 160px; line-height: 144px; }
+      .hero-h1-wrap { padding-bottom: 120px; }
+      .hero-left { width: 320px; }
+      .hero-photo-wrap { width: 300px; }
+      .hero-right { width: 260px; }
+      .hero-tagline { width: auto; max-width: 220px; font-size: 14px; }
+      .hero-max { height: auto; min-height: 700px; }
+      .hero-row { position: relative; top: auto; left: auto; right: auto; padding: 0 24px; }
+      .hero-topbar { position: relative; top: auto; left: auto; right: auto; padding: 40px 24px 24px; }
+      .hero-marquee-wrap { position: relative; top: auto; left: auto; right: auto; margin: 0 24px; }
+
+      #about { padding: 0 32px; }
+      .about-h2 { font-size: 90px; line-height: 81px; }
+      .about-header { height: auto; }
+      .about-header-right { padding-top: 80px; }
+      .about-desc { width: auto; max-width: 100%; }
+      .skill-name-wrap { min-width: 260px; }
+      .skill-name { font-size: 36px; line-height: 36px; }
+
+      #projects { padding: 0 32px; }
+      .projects-h2 { font-size: 90px; line-height: 81px; }
+      .project-row { height: auto; flex-direction: column; }
+      .proj-img-panel { display: none; }
+      .proj-info-panel { height: auto; width: 100%; }
+
+      #contact { padding: 0 32px; }
+      .contact-h2 { font-size: 90px; line-height: 81px; }
+      .contact-grid { height: auto; }
+
+      footer { padding: 0 32px; }
+    }
+
+    /* Mobile (≤768px) */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 64px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 10px 20px; font-size: 10px; }
+
+      #hero { padding: 64px 20px 0; min-height: auto; }
+      .hero-portfolio-bg { display: none; }
+      .hero-max { height: auto; min-height: auto; }
+      .hero-topbar { position: relative; top: auto; left: auto; right: auto; padding: 32px 0 20px; }
+      .hero-row {
+        position: relative; top: auto; left: auto; right: auto;
+        flex-direction: column; align-items: center;
+        gap: 48px; padding: 0; padding-bottom: 48px;
+      }
+      .hero-left { width: 100%; align-items: flex-start; gap: 32px; padding-bottom: 0; }
+      .hero-h1-wrap { padding-bottom: 0; }
+      .hero-h1 { font-size: 100px; line-height: 90px; }
+      .hero-photo-wrap { width: 100%; max-width: 320px; }
+      .hero-photo { height: 380px; }
+      .stat-orange { top: 16%; left: auto; right: -12%; min-width: 110px; }
+      .stat-cream { top: 44%; left: -12%; right: auto; min-width: 100px; }
+      .hero-right { width: 100%; align-items: flex-start; padding-bottom: 0; }
+      .hero-tagline { text-align: left; padding-left: 0; max-width: 100%; }
+      .hero-marquee-wrap { position: relative; top: auto; left: auto; right: auto; margin: 0; }
+
+      #about { padding: 0 20px; }
+      .about-max { padding: 64px 16px; }
+      .about-header { flex-direction: column; gap: 24px; height: auto; }
+      .about-header-right { padding-top: 0; padding-bottom: 0; }
+      .about-h2 { font-size: 72px; line-height: 65px; }
+      .about-desc { width: auto; font-size: 15px; }
+      .about-bg { font-size: 160px; line-height: 160px; }
+      .skill-row { flex-wrap: wrap; gap: 12px; }
+      .skill-name-wrap { min-width: 100%; }
+      .skill-name { font-size: 32px; line-height: 32px; white-space: normal; }
+      .skill-desc-wrap { max-width: 100%; }
+      .skill-arrow-wrap { display: none; }
+
+      #projects { padding: 0 20px; }
+      .projects-max { padding: 64px 16px; gap: 40px; }
+      .projects-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .projects-h2 { font-size: 72px; line-height: 65px; }
+      .projects-desc { width: auto; max-width: 100%; }
+      .projects-work-bg { display: none; }
+      .project-row { flex-direction: column; height: auto; }
+      .proj-img-panel { display: none; }
+      .proj-info-panel { height: auto; padding: 24px; }
+      .proj-title { font-size: 32px; line-height: 32px; }
+
+      #contact { padding: 0 20px; }
+      .contact-max { padding: 64px 16px; gap: 40px; }
+      .contact-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .contact-h2 { font-size: 72px; line-height: 65px; }
+      .contact-header-left { white-space: normal; }
+      .contact-desc-wrap { width: auto; max-width: 100%; }
+      .contact-grid { grid-template-columns: 1fr; height: auto; }
+      .contact-right-col { padding-bottom: 0; }
+      .form-row-2col { grid-template-columns: 1fr; height: auto; }
+      .social-grid { height: auto; }
+      .contact-bg { font-size: 120px; line-height: 120px; }
+
+      footer { padding: 0 20px; }
+    }
+
+    /* Small mobile (≤480px) */
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 80px; line-height: 72px; }
+      .about-h2 { font-size: 56px; line-height: 50px; }
+      .projects-h2 { font-size: 56px; line-height: 50px; }
+      .contact-h2 { font-size: 56px; line-height: 50px; }
+      .stat-orange { right: -8%; }
+      .stat-cream { left: -8%; }
+    }
+
+>>>>>>> f75d4f0 (Initial commit)
   </style>
 </head>
 <body>

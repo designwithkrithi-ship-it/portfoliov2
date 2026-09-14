@@ -75,14 +75,8 @@
     /* topbar */
     .hero-topbar {
       position: absolute; top: 0; left: 24px; right: 24px;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; justify-content: flex-start;
       padding-top: 40px; padding-bottom: 24px;
-    }
-    .hero-role {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700; font-size: 11.2px;
-      letter-spacing: 2.24px; text-transform: uppercase;
-      color: rgba(245,240,224,0.35);
     }
     .hero-avail {
       font-family: 'Space Grotesk', sans-serif;
@@ -200,7 +194,7 @@
       max-width: 280px; width: 280px;
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 400; font-size: 16px;
-      line-height: 28.8px;
+      line-height: 1.4;
       color: rgba(245,240,224,0.5);
       text-align: right;
       margin-bottom: 0;
@@ -210,6 +204,7 @@
     }
     .hero-btn {
       display: inline-flex; align-items: center; justify-content: center;
+      width: 280px; box-sizing: border-box;
       padding: 14px 34px;
       border: 2px solid rgba(245,240,224,0.25);
       border-radius: 999px;
@@ -217,7 +212,7 @@
       font-weight: 700; font-size: 12px;
       letter-spacing: 2.16px; text-transform: uppercase;
       color: #f5f0e0; text-decoration: none;
-      margin-top: 0; /* spacing controlled by parent gap */
+      margin-top: 24px;
     }
     .hero-est-row {
       display: flex; align-items: center; gap: 8px;
@@ -309,8 +304,12 @@
       line-height: 29.6px;
       color: rgba(15,15,7,0.65);
     }
-    .about-divider { height: 1px; background: rgba(15,15,7,0.1); }
     /* skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 64px;
+    }
     .skill-row {
       display: flex; gap: 32px; align-items: flex-start;
       padding: 28px 0;
@@ -330,21 +329,6 @@
       letter-spacing: 0.96px; color: #0f0f07;
       white-space: nowrap;
     }
-    .skill-desc-wrap { flex: 1 0 0; max-width: 400px; padding-top: 4px; }
-    .skill-desc {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 400; font-size: 14px;
-      line-height: 24.5px;
-      color: rgba(15,15,7,0.55);
-      white-space: pre-line;
-    }
-    .skill-arrow-wrap { align-self: stretch; display: flex; align-items: center; justify-content: flex-end; padding: 20.75px 0; }
-    .skill-arrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 24px; line-height: 36px;
-      color: rgba(15,15,7,0.2);
-    }
-
     /* ─── PROJECTS ─── */
     #projects {
       background: #0f0f07;
@@ -704,13 +688,25 @@
       color: rgba(245,240,224,0.25);
       text-align: center; line-height: 18px;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> cee8adb (Initial commit)
-
     /* ─── RESPONSIVE ─── */
+
+    /* Keep the three-column hero visible below its 1440px canvas width. */
+    @media (min-width: 1025px) and (max-width: 1439px) {
+      #hero { padding: 80px 32px 0; }
+      .hero-portfolio-bg { font-size: 220px; line-height: 220px; }
+      .hero-h1 { font-size: clamp(160px, 15.21vw, 219px); line-height: 0.9; }
+      .hero-h1-wrap { padding-bottom: clamp(120px, 13.66vw, 196.735px); }
+      .hero-left { width: clamp(320px, 31.1vw, 447.87px); }
+      .hero-photo-wrap { width: clamp(300px, 27.78vw, 400px); }
+      .hero-photo { height: clamp(390px, 36.11vw, 520px); }
+      .hero-right { width: clamp(290px, 26.68vw, 384.14px); }
+      .hero-tagline { width: 280px; max-width: 280px; font-size: clamp(14px, 1.12vw, 16px); }
+      .hero-btn { width: 280px; }
+      .hero-max { height: auto; min-height: 700px; }
+      .hero-row { position: relative; top: auto; left: auto; right: auto; justify-content: space-between; padding: 0 24px; }
+      .hero-topbar { position: relative; top: auto; left: auto; right: auto; padding: 40px 24px 24px; }
+      .hero-marquee-wrap { position: relative; top: auto; left: auto; right: auto; margin: 0 24px; }
+    }
 
     /* Tablet (≤1024px) */
     @media (max-width: 1024px) {
@@ -719,14 +715,16 @@
 
       #hero { padding: 80px 32px 0; }
       .hero-portfolio-bg { font-size: 220px; line-height: 220px; }
-      .hero-h1 { font-size: 160px; line-height: 144px; }
-      .hero-h1-wrap { padding-bottom: 120px; }
-      .hero-left { width: 320px; }
-      .hero-photo-wrap { width: 300px; }
-      .hero-right { width: 260px; }
-      .hero-tagline { width: auto; max-width: 220px; font-size: 14px; }
+      .hero-h1 { font-size: clamp(160px, 15.21vw, 219px); line-height: 0.9; }
+      .hero-h1-wrap { padding-bottom: clamp(120px, 13.66vw, 196.735px); }
+      .hero-left { width: clamp(320px, 31.1vw, 447.87px); }
+      .hero-photo-wrap { width: clamp(300px, 27.78vw, 400px); }
+      .hero-photo { height: clamp(390px, 36.11vw, 520px); }
+      .hero-right { width: clamp(290px, 26.68vw, 384.14px); }
+      .hero-tagline { width: 280px; max-width: 280px; font-size: clamp(14px, 1.12vw, 16px); }
+      .hero-btn { width: 280px; }
       .hero-max { height: auto; min-height: 700px; }
-      .hero-row { position: relative; top: auto; left: auto; right: auto; padding: 0 24px; }
+      .hero-row { position: relative; top: auto; left: auto; right: auto; justify-content: space-between; padding: 0 24px; }
       .hero-topbar { position: relative; top: auto; left: auto; right: auto; padding: 40px 24px 24px; }
       .hero-marquee-wrap { position: relative; top: auto; left: auto; right: auto; margin: 0 24px; }
 
@@ -735,6 +733,7 @@
       .about-header { height: auto; }
       .about-header-right { padding-top: 80px; }
       .about-desc { width: auto; max-width: 100%; }
+      .skills-grid { column-gap: 32px; }
       .skill-name-wrap { min-width: 260px; }
       .skill-name { font-size: 36px; line-height: 36px; }
 
@@ -775,6 +774,7 @@
       .stat-cream { top: 44%; left: -12%; right: auto; min-width: 100px; }
       .hero-right { width: 100%; align-items: flex-start; padding-bottom: 0; }
       .hero-tagline { text-align: left; padding-left: 0; max-width: 100%; }
+      .hero-btn { width: 100%; max-width: 280px; }
       .hero-marquee-wrap { position: relative; top: auto; left: auto; right: auto; margin: 0; }
 
       #about { padding: 0 20px; }
@@ -784,11 +784,11 @@
       .about-h2 { font-size: 72px; line-height: 65px; }
       .about-desc { width: auto; font-size: 15px; }
       .about-bg { font-size: 160px; line-height: 160px; }
-      .skill-row { flex-wrap: wrap; gap: 12px; }
-      .skill-name-wrap { min-width: 100%; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-row { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; }
+      .skill-num-wrap { min-width: 0; padding-right: 0; }
+      .skill-name-wrap { min-width: 0; }
       .skill-name { font-size: 32px; line-height: 32px; white-space: normal; }
-      .skill-desc-wrap { max-width: 100%; }
-      .skill-arrow-wrap { display: none; }
 
       #projects { padding: 0 20px; }
       .projects-max { padding: 64px 16px; gap: 40px; }
@@ -825,11 +825,6 @@
       .stat-orange { right: -8%; }
       .stat-cream { left: -8%; }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> f75d4f0 (Initial commit)
->>>>>>> cee8adb (Initial commit)
   </style>
 </head>
 <body>
@@ -841,7 +836,6 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="https://www.linkedin.com/in/krithi-ux/" target="_blank" rel="noopener noreferrer" class="nav-cta">Hire Me</a>
@@ -855,7 +849,6 @@
 
     <!-- topbar -->
     <div class="hero-topbar">
-      <span class="hero-role">Full-Stack Designer</span>
       <span class="hero-avail">★ Available for work</span>
     </div>
 
@@ -894,7 +887,7 @@
 
       <!-- right -->
       <div class="hero-right">
-        <p class="hero-tagline">Simplifying complex experiences<br>for Bharat users</p>
+        <p class="hero-tagline">A full-stack designer<br>simplifying complex experiences<br>for Bharat users</p>
         <a href="#projects" class="hero-btn">View my projects</a>
         <div class="hero-est-row">
           <div class="hero-est-line"></div>
@@ -935,44 +928,22 @@
       </div>
     </div>
 
-    <div class="about-divider"></div>
-
-    <div>
+    <div class="skills-grid">
       <div class="skill-row">
         <div class="skill-num-wrap"><span class="skill-num">01</span></div>
         <div class="skill-name-wrap"><span class="skill-name">USER RESEARCH</span></div>
-        <div class="skill-desc-wrap">
-          <p class="skill-desc">Turn ideas into clear, actionable product roadmaps.
- Align user needs with business goals.</p>
-        </div>
-        <div class="skill-arrow-wrap"><span class="skill-arrow">→</span></div>
       </div>
       <div class="skill-row">
         <div class="skill-num-wrap"><span class="skill-num">02</span></div>
         <div class="skill-name-wrap"><span class="skill-name">UI / UX Design</span></div>
-        <div class="skill-desc-wrap">
-          <p class="skill-desc">Design intuitive flows that feel effortless.
- From wireframes to polished experiences.</p>
-        </div>
-        <div class="skill-arrow-wrap"><span class="skill-arrow">→</span></div>
       </div>
       <div class="skill-row">
         <div class="skill-num-wrap"><span class="skill-num">03</span></div>
         <div class="skill-name-wrap"><span class="skill-name">WEBSITE DESIGN</span></div>
-        <div class="skill-desc-wrap">
-          <p class="skill-desc">Craft clean, modern interfaces with strong visual hierarchy.
-Every pixel has a purpose.</p>
-        </div>
-        <div class="skill-arrow-wrap"><span class="skill-arrow">→</span></div>
       </div>
       <div class="skill-row">
         <div class="skill-num-wrap"><span class="skill-num">04</span></div>
         <div class="skill-name-wrap"><span class="skill-name">design system</span></div>
-        <div class="skill-desc-wrap">
-          <p class="skill-desc">Build scalable systems for consistency and speed.
-Reusable, reliable, and ready to grow.</p>
-        </div>
-        <div class="skill-arrow-wrap"><span class="skill-arrow">→</span></div>
       </div>
     </div>
 
@@ -994,35 +965,56 @@ Reusable, reliable, and ready to grow.</p>
 
     <div class="projects-list">
 
-      <!-- Row 1: image left | info right -->
+      <!-- Row 1: info left | image right (blurred) -->
       <div class="project-row">
-        <div class="proj-img-panel" style="width:383px;">
-          <div class="proj-img-bg"></div>
-          <img src="assets/images/projects/ANALYTICSPRO DASHBOARD.png" alt="AnalyticsPro Dashboard" />
+        <div class="proj-info-panel">
+          <div class="proj-info-top">
+            <div class="proj-num-row">
+              <span class="proj-num">01</span>
+              <span class="proj-year">2025</span>
+            </div>
+            <h3 class="proj-title">UNIFIED LEFT NAVIGATION FOR 45+ APPS</h3>
+            <p class="proj-desc">Designing one coherent navigation system spanning an entire product ecosystem - harmonising 45+ apps into a unified language</p>
+          </div>
+          <div class="proj-link-wrap">
+            <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoib3JJbk1ZZ3pnZVRsV0d3ODdnMU9wdWx1SVRZaGdlQzBJZmM3NlpJcDN3aEpYSll1UGRheVJubSsyOFlOM3lUOGRtcEU1bGY1bkdObXBaQW9yYUhUVElibUg4Y2JDQUJ3Y1FRekJhSWZKOHpuQTZCMmQ3MmpzcG5CUXVJRHM1OXJ1ZGNrbkZLdXRwTGVyczU2L0VRakR4QjZPWVAycjhGTFNpdHR1UElWMEpVNC8wdG9GcG0zcW1VUXM3NEIvUDRuK2RSelV3a25lT3lhSzVvNXRHYk4rckV5U0xJWEN1RTdKNlh3MitmQkJkRDRkVHJreU9paWVlM081QS9qbGp0RE1hVzNpN2dpNG02VFdSNHM4aXp4NG1SWm9YaVUvWUJxbHVqeWpINUtrZ0p4MnRtT1UrTEpkaWtQWnhCOEZ2RXc2ZDBrL1NLaG52eVNsallsVGc9PSIsImgiOiJOREEgLSBQYXNzd29yZCBwcm90ZWN0ZWQiLCJzIjoiU2xxVFRJdVJ2Ni8zSTNnaEtibm5lUT09IiwiaSI6ImFFa215OFRmWEl0aFlhL3gifQ==" class="proj-link" target="_blank">View Project</a>
+          </div>
+        </div>
+        <div class="proj-img-panel blurred" style="width:395px;">
+          <img src="assets/images/projects/DATAVIZ INTELLIGENCE.png" alt="DataViz Intelligence" />
+          <div class="proj-img-gradient"></div>
+          <div class="proj-badge">UX DESIGN</div>
+        </div>
+      </div>
+
+      <!-- Row 2: image left | info right -->
+      <div class="project-row">
+        <div class="proj-img-panel" style="width:379px;">
+          <img src="assets/images/projects/SHOPEASE E-COMMERCE.png" alt="ShopEase E-Commerce" />
           <div class="proj-img-gradient"></div>
           <div class="proj-badge">PRODUCT DESIGN</div>
         </div>
         <div class="proj-info-panel">
           <div class="proj-info-top">
             <div class="proj-num-row">
-              <span class="proj-num">01</span>
-              <span class="proj-year">2022</span>
+              <span class="proj-num">02</span>
+              <span class="proj-year">2023</span>
             </div>
-            <h3 class="proj-title">HANDS-FREE ONBOARDING</h3>
-            <p class="proj-desc">Rethinking the onboarding experience to remove barriers - letting users hit the ground running without handholding.</p>
+            <h3 class="proj-title">DYNAMIC LICENSE MANAGEMENT</h3>
+            <p class="proj-desc">Untangling the complexity of software licensing into a fluid, intuitive management experience for admins and users alike</p>
           </div>
           <div class="proj-link-wrap">
-            <a href="https://www.figma.com/proto/WUE9UBlgN065aPa0XsPSCj/Portfolio-2024?node-id=10-2041&t=gTPF0xWsDfj2GXiG-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A2041" class="proj-link" target="_blank">View Project</a>
+            <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiYlZSZGs2Z0dCSTJpWUlpanBidlBIU0UwdTRISEJEVWZLVUc1c0NaWEJsTHlMNk1naGtFRS9UTzMvU1lnQ0FLWEpZV3pXV3oveVJhMEFnejE3QnB2SlFRa1ZzS3E3U1BTQkgrSUg5WEk0cmpMWHJVMVZFeURGZzQ4dmQ1RHBwU2UwSEpuTkdYd0JVd3QvTlB0bWtNUXJJSmNpamZDIiwicyI6IjlKZklxUGQ5NmE4aUZ3ZHJMSzNSd2c9PSIsImkiOiI2MGNtclhnSThleWd4TFNYIn0=" class="proj-link" target="_blank">View Project</a>
           </div>
         </div>
       </div>
 
-      <!-- Row 2: info left | image right -->
+      <!-- Row 3: info left | image right -->
       <div class="project-row">
         <div class="proj-info-panel">
           <div class="proj-info-top">
             <div class="proj-num-row">
-              <span class="proj-num">02</span>
+              <span class="proj-num">03</span>
               <span class="proj-year">2022</span>
             </div>
             <h3 class="proj-title">IMPROVE LEAD QUALITY USING USER RESEARCH</h3>
@@ -1039,47 +1031,26 @@ Reusable, reliable, and ready to grow.</p>
         </div>
       </div>
 
-      <!-- Row 3: image left | info right -->
+      <!-- Row 4: image left | info right -->
       <div class="project-row">
-        <div class="proj-img-panel" style="width:379px;">
-          <img src="assets/images/projects/SHOPEASE E-COMMERCE.png" alt="ShopEase E-Commerce" />
+        <div class="proj-img-panel" style="width:383px;">
+          <div class="proj-img-bg"></div>
+          <img src="assets/images/projects/ANALYTICSPRO DASHBOARD.png" alt="AnalyticsPro Dashboard" />
           <div class="proj-img-gradient"></div>
           <div class="proj-badge">PRODUCT DESIGN</div>
         </div>
         <div class="proj-info-panel">
           <div class="proj-info-top">
             <div class="proj-num-row">
-              <span class="proj-num">03</span>
-              <span class="proj-year">2023</span>
-            </div>
-            <h3 class="proj-title">DYNAMIC LICENSE MANAGEMENT</h3>
-            <p class="proj-desc">Untangling the complexity of software licensing into a fluid, intuitive management experience for admins and users alike</p>
-          </div>
-          <div class="proj-link-wrap">
-            <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiYlZSZGs2Z0dCSTJpWUlpanBidlBIU0UwdTRISEJEVWZLVUc1c0NaWEJsTHlMNk1naGtFRS9UTzMvU1lnQ0FLWEpZV3pXV3oveVJhMEFnejE3QnB2SlFRa1ZzS3E3U1BTQkgrSUg5WEk0cmpMWHJVMVZFeURGZzQ4dmQ1RHBwU2UwSEpuTkdYd0JVd3QvTlB0bWtNUXJJSmNpamZDIiwicyI6IjlKZklxUGQ5NmE4aUZ3ZHJMSzNSd2c9PSIsImkiOiI2MGNtclhnSThleWd4TFNYIn0=" class="proj-link" target="_blank">View Project</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Row 4: info left | image right (blurred) -->
-      <div class="project-row">
-        <div class="proj-info-panel">
-          <div class="proj-info-top">
-            <div class="proj-num-row">
               <span class="proj-num">04</span>
-              <span class="proj-year">2025</span>
+              <span class="proj-year">2022</span>
             </div>
-            <h3 class="proj-title">UNIFIED LEFT NAVIGATION FOR 45+ APPS</h3>
-            <p class="proj-desc">Designing one coherent navigation system spanning an entire product ecosystem - harmonising 45+ apps into a unified language</p>
+            <h3 class="proj-title">HANDS-FREE ONBOARDING</h3>
+            <p class="proj-desc">Rethinking the onboarding experience to remove barriers - letting users hit the ground running without handholding.</p>
           </div>
           <div class="proj-link-wrap">
-            <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoib3JJbk1ZZ3pnZVRsV0d3ODdnMU9wdWx1SVRZaGdlQzBJZmM3NlpJcDN3aEpYSll1UGRheVJubSsyOFlOM3lUOGRtcEU1bGY1bkdObXBaQW9yYUhUVElibUg4Y2JDQUJ3Y1FRekJhSWZKOHpuQTZCMmQ3MmpzcG5CUXVJRHM1OXJ1ZGNrbkZLdXRwTGVyczU2L0VRakR4QjZPWVAycjhGTFNpdHR1UElWMEpVNC8wdG9GcG0zcW1VUXM3NEIvUDRuK2RSelV3a25lT3lhSzVvNXRHYk4rckV5U0xJWEN1RTdKNlh3MitmQkJkRDRkVHJreU9paWVlM081QS9qbGp0RE1hVzNpN2dpNG02VFdSNHM4aXp4NG1SWm9YaVUvWUJxbHVqeWpINUtrZ0p4MnRtT1UrTEpkaWtQWnhCOEZ2RXc2ZDBrL1NLaG52eVNsallsVGc9PSIsImgiOiJOREEgLSBQYXNzd29yZCBwcm90ZWN0ZWQiLCJzIjoiU2xxVFRJdVJ2Ni8zSTNnaEtibm5lUT09IiwiaSI6ImFFa215OFRmWEl0aFlhL3gifQ==" class="proj-link" target="_blank">View Project</a>
+            <a href="https://www.figma.com/proto/WUE9UBlgN065aPa0XsPSCj/Portfolio-2024?node-id=10-2041&t=gTPF0xWsDfj2GXiG-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A2041" class="proj-link" target="_blank">View Project</a>
           </div>
-        </div>
-        <div class="proj-img-panel blurred" style="width:395px;">
-          <img src="assets/images/projects/DATAVIZ INTELLIGENCE.png" alt="DataViz Intelligence" />
-          <div class="proj-img-gradient"></div>
-          <div class="proj-badge">UX DESIGN</div>
         </div>
       </div>
 

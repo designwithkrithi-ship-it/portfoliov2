@@ -384,6 +384,12 @@
     .project-row {
       display: flex; align-items: flex-start;
       height: 380px;
+      color: inherit; text-decoration: none;
+      cursor: pointer; border-radius: 16px;
+    }
+    .project-row:focus-visible {
+      outline: 2px solid #f97316;
+      outline-offset: 4px;
     }
     /* image panel */
     .proj-img-panel {
@@ -429,6 +435,12 @@
       padding: 41px;
       display: flex; flex-direction: column;
       justify-content: space-between;
+      transition: background-color .2s, border-color .2s;
+    }
+    .project-row:hover .proj-info-panel,
+    .project-row:focus-visible .proj-info-panel {
+      background: rgba(245,240,224,0.07);
+      border-color: rgba(249,115,22,0.35);
     }
     .proj-info-top { display: flex; flex-direction: column; gap: 15px; }
     .proj-num-row {
@@ -966,7 +978,7 @@
     <div class="projects-list">
 
       <!-- Row 1: info left | image right (blurred) -->
-      <div class="project-row">
+      <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoib3JJbk1ZZ3pnZVRsV0d3ODdnMU9wdWx1SVRZaGdlQzBJZmM3NlpJcDN3aEpYSll1UGRheVJubSsyOFlOM3lUOGRtcEU1bGY1bkdObXBaQW9yYUhUVElibUg4Y2JDQUJ3Y1FRekJhSWZKOHpuQTZCMmQ3MmpzcG5CUXVJRHM1OXJ1ZGNrbkZLdXRwTGVyczU2L0VRakR4QjZPWVAycjhGTFNpdHR1UElWMEpVNC8wdG9GcG0zcW1VUXM3NEIvUDRuK2RSelV3a25lT3lhSzVvNXRHYk4rckV5U0xJWEN1RTdKNlh3MitmQkJkRDRkVHJreU9paWVlM081QS9qbGp0RE1hVzNpN2dpNG02VFdSNHM4aXp4NG1SWm9YaVUvWUJxbHVqeWpINUtrZ0p4MnRtT1UrTEpkaWtQWnhCOEZ2RXc2ZDBrL1NLaG52eVNsallsVGc9PSIsImgiOiJOREEgLSBQYXNzd29yZCBwcm90ZWN0ZWQiLCJzIjoiU2xxVFRJdVJ2Ni8zSTNnaEtibm5lUT09IiwiaSI6ImFFa215OFRmWEl0aFlhL3gifQ==" class="project-row" target="_blank" rel="noopener noreferrer">
         <div class="proj-info-panel">
           <div class="proj-info-top">
             <div class="proj-num-row">
@@ -977,7 +989,7 @@
             <p class="proj-desc">Designing one coherent navigation system spanning an entire product ecosystem - harmonising 45+ apps into a unified language</p>
           </div>
           <div class="proj-link-wrap">
-            <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoib3JJbk1ZZ3pnZVRsV0d3ODdnMU9wdWx1SVRZaGdlQzBJZmM3NlpJcDN3aEpYSll1UGRheVJubSsyOFlOM3lUOGRtcEU1bGY1bkdObXBaQW9yYUhUVElibUg4Y2JDQUJ3Y1FRekJhSWZKOHpuQTZCMmQ3MmpzcG5CUXVJRHM1OXJ1ZGNrbkZLdXRwTGVyczU2L0VRakR4QjZPWVAycjhGTFNpdHR1UElWMEpVNC8wdG9GcG0zcW1VUXM3NEIvUDRuK2RSelV3a25lT3lhSzVvNXRHYk4rckV5U0xJWEN1RTdKNlh3MitmQkJkRDRkVHJreU9paWVlM081QS9qbGp0RE1hVzNpN2dpNG02VFdSNHM4aXp4NG1SWm9YaVUvWUJxbHVqeWpINUtrZ0p4MnRtT1UrTEpkaWtQWnhCOEZ2RXc2ZDBrL1NLaG52eVNsallsVGc9PSIsImgiOiJOREEgLSBQYXNzd29yZCBwcm90ZWN0ZWQiLCJzIjoiU2xxVFRJdVJ2Ni8zSTNnaEtibm5lUT09IiwiaSI6ImFFa215OFRmWEl0aFlhL3gifQ==" class="proj-link" target="_blank">View Project</a>
+            <span class="proj-link">View Project</span>
           </div>
         </div>
         <div class="proj-img-panel blurred" style="width:395px;">
@@ -985,10 +997,10 @@
           <div class="proj-img-gradient"></div>
           <div class="proj-badge">UX DESIGN</div>
         </div>
-      </div>
+      </a>
 
       <!-- Row 2: image left | info right -->
-      <div class="project-row">
+      <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiYlZSZGs2Z0dCSTJpWUlpanBidlBIU0UwdTRISEJEVWZLVUc1c0NaWEJsTHlMNk1naGtFRS9UTzMvU1lnQ0FLWEpZV3pXV3oveVJhMEFnejE3QnB2SlFRa1ZzS3E3U1BTQkgrSUg5WEk0cmpMWHJVMVZFeURGZzQ4dmQ1RHBwU2UwSEpuTkdYd0JVd3QvTlB0bWtNUXJJSmNpamZDIiwicyI6IjlKZklxUGQ5NmE4aUZ3ZHJMSzNSd2c9PSIsImkiOiI2MGNtclhnSThleWd4TFNYIn0=" class="project-row" target="_blank" rel="noopener noreferrer">
         <div class="proj-img-panel" style="width:379px;">
           <img src="assets/images/projects/SHOPEASE E-COMMERCE.png" alt="ShopEase E-Commerce" />
           <div class="proj-img-gradient"></div>
@@ -1004,13 +1016,13 @@
             <p class="proj-desc">Untangling the complexity of software licensing into a fluid, intuitive management experience for admins and users alike</p>
           </div>
           <div class="proj-link-wrap">
-            <a href="https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiYlZSZGs2Z0dCSTJpWUlpanBidlBIU0UwdTRISEJEVWZLVUc1c0NaWEJsTHlMNk1naGtFRS9UTzMvU1lnQ0FLWEpZV3pXV3oveVJhMEFnejE3QnB2SlFRa1ZzS3E3U1BTQkgrSUg5WEk0cmpMWHJVMVZFeURGZzQ4dmQ1RHBwU2UwSEpuTkdYd0JVd3QvTlB0bWtNUXJJSmNpamZDIiwicyI6IjlKZklxUGQ5NmE4aUZ3ZHJMSzNSd2c9PSIsImkiOiI2MGNtclhnSThleWd4TFNYIn0=" class="proj-link" target="_blank">View Project</a>
+            <span class="proj-link">View Project</span>
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Row 3: info left | image right -->
-      <div class="project-row">
+      <a href="https://bold-rubidium-1e9.notion.site/Improving-lead-quality-using-User-Research-30ecbb6b303980a280afcf3b23bfe909" class="project-row" target="_blank" rel="noopener noreferrer">
         <div class="proj-info-panel">
           <div class="proj-info-top">
             <div class="proj-num-row">
@@ -1021,7 +1033,7 @@
             <p class="proj-desc">A deep dive research initiative uncovering what truly drives lead quality - translating qualitative insights into measurable product improvements</p>
           </div>
           <div class="proj-link-wrap">
-            <a href="https://bold-rubidium-1e9.notion.site/Improving-lead-quality-using-User-Research-30ecbb6b303980a280afcf3b23bfe909" class="proj-link" target="_blank">View Project</a>
+            <span class="proj-link">View Project</span>
           </div>
         </div>
         <div class="proj-img-panel" style="width:382px;">
@@ -1029,10 +1041,10 @@
           <div class="proj-img-gradient"></div>
           <div class="proj-badge">USER RESEARCH</div>
         </div>
-      </div>
+      </a>
 
       <!-- Row 4: image left | info right -->
-      <div class="project-row">
+      <a href="https://www.figma.com/proto/WUE9UBlgN065aPa0XsPSCj/Portfolio-2024?node-id=10-2041&t=gTPF0xWsDfj2GXiG-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A2041" class="project-row" target="_blank" rel="noopener noreferrer">
         <div class="proj-img-panel" style="width:383px;">
           <div class="proj-img-bg"></div>
           <img src="assets/images/projects/ANALYTICSPRO DASHBOARD.png" alt="AnalyticsPro Dashboard" />
@@ -1049,10 +1061,10 @@
             <p class="proj-desc">Rethinking the onboarding experience to remove barriers - letting users hit the ground running without handholding.</p>
           </div>
           <div class="proj-link-wrap">
-            <a href="https://www.figma.com/proto/WUE9UBlgN065aPa0XsPSCj/Portfolio-2024?node-id=10-2041&t=gTPF0xWsDfj2GXiG-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A2041" class="proj-link" target="_blank">View Project</a>
+            <span class="proj-link">View Project</span>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
